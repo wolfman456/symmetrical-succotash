@@ -13,7 +13,6 @@ fetch("http://localhost:9092/todo")
   })
   .catch((error) => console.error("FETCH ERROR:", error));
 
-
   function show(data) {
     console.log("show")
     let todolist = data;
@@ -23,6 +22,7 @@ fetch("http://localhost:9092/todo")
           <th>Name</th>
           <th>description</th>
           <th>complete</th>
+          <th>Action</Action>
          </tr>`;
     
     // Loop to access all rows 
@@ -30,9 +30,22 @@ fetch("http://localhost:9092/todo")
         tab += `<tr> 
     <td>${r.name} </td>
     <td>${r.description}</td>
-    <td>${r.complete}</td>          
+    <td>${r.complete}</td>
+    <td><button type="button">update</button>
+    <button type="button">Delete</button></td>      
 </tr>`;
     }
-    // Setting innerHTML as tab variable
+    let form = document.getElementById("form")
+    let name = document.createElement("input");
+    name.setAttribute("placeholder", "Name");
+    let des = document.createElement("input");
+    des.setAttribute("placeholder","Descrition");
+    let status = document.createElement("input");
+    status.setAttribute("placeholder", "completed");
+    form.append(name, des, status);
+    // form.appendChild(des);
+    // // Setting innerHTML as tab variable
     document.getElementById("todos").innerHTML = tab;
+    
   }
+  
