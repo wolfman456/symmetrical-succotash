@@ -13,3 +13,16 @@ table {
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+
+  form{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid 
+  }
+button, input{
+  padding-right: 5%;
+}
+button{
+  text-align: center;
+}

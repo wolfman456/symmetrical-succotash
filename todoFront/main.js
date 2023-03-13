@@ -19,6 +19,7 @@ fetch("http://localhost:9092/todo")
     console.log(todolist[0].name)
     let tab = 
         `<tr>
+          <th>ID</th>
           <th>Name</th>
           <th>description</th>
           <th>complete</th>
