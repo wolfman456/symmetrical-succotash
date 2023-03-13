@@ -27,7 +27,8 @@ fetch("http://localhost:9092/todo")
     
     // Loop to access all rows 
     for (let r of todolist) {
-        tab += `<tr> 
+        tab += `<tr>
+    <td>${r.id}</td>     
     <td>${r.name} </td>
     <td>${r.description}</td>
     <td>${r.complete}</td>
@@ -35,17 +36,27 @@ fetch("http://localhost:9092/todo")
     <button type="button">Delete</button></td>      
 </tr>`;
     }
-    let form = document.getElementById("form")
-    let name = document.createElement("input");
-    name.setAttribute("placeholder", "Name");
-    let des = document.createElement("input");
-    des.setAttribute("placeholder","Descrition");
-    let status = document.createElement("input");
-    status.setAttribute("placeholder", "completed");
-    form.append(name, des, status);
+    document.getElementById("todos").innerHTML = tab;
+    
+    let forms =
+    `<form>
+      <input placeholder="name">
+      <input placeholder="Description">
+      <input placeholder= Completed>
+      <button id ="save">save</button>
+      <button>Clear</button>
+    </form>`
+    document.getElementById("form").innerHTML = forms;
+    // let name = document.createElement("input");
+    // name.setAttribute("placeholder", "Name");
+    // let des = document.createElement("input");
+    // des.setAttribute("placeholder","Descrition");
+    // let status = document.createElement("input");
+    // status.setAttribute("placeholder", "completed");
+    // form.append(name, des, status);
     // form.appendChild(des);
     // // Setting innerHTML as tab variable
-    document.getElementById("todos").innerHTML = tab;
+    
     
   }
   
