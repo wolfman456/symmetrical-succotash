@@ -1,22 +1,35 @@
 package com.example.todo.controller;
 
+import com.example.todo.model.ToDoModel;
 import com.example.todo.service.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = "http://localhost:5000")
 @RequestMapping("/todo")
 public class TodoController {
     @Autowired
     ToDoService toDoService;
 
-    @GetMapping
+    @GetMapping("/test")
     public String hello(){
         return "hello";
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getToDO(){
+        List<ToDoModel> toDoModelList= toDoService.getToDo();
+        return ResponseEntity.ok(toDoModelList);
+    }
+
+    @PostMapping("/create")
+    public ResponseEntity<?> createToDO(@RequestBody ToDoModel toDoModel){
+        ToDoModel toDoModel1 = toDoService.createToDo(toDoModel);
+        return ResponseEntity.ok(toDoModel1);
     }
 
 }
