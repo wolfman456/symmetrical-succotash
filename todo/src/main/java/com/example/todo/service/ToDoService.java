@@ -18,4 +18,22 @@ public class ToDoService {
     public ToDoModel createToDo(ToDoModel toDoModel){
         return todoRepo.save(toDoModel);
     }
+    public ToDoModel updateTodo(ToDoModel toDoModel){
+        ToDoModel oldToDo = todoRepo.findById(toDoModel.getId()).orElseThrow();
+
+        if(toDoModel.getComplete() != null){
+            oldToDo.setComplete(toDoModel.getComplete());
+        }
+        if (toDoModel.getName()!=null){
+            oldToDo.setName(toDoModel.getName());
+        }
+        if (toDoModel.getDescription() != null){
+            oldToDo.setDescription(toDoModel.getDescription());
+        }
+        return todoRepo.save(oldToDo);
+    }
+    public void deleteToDo(Long id){
+        ToDoModel toDoModel = todoRepo.findById(id).orElseThrow();
+        todoRepo.delete(toDoModel);
+    }
 }
