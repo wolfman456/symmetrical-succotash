@@ -31,5 +31,15 @@ public class TodoController {
         ToDoModel toDoModel1 = toDoService.createToDo(toDoModel);
         return ResponseEntity.ok(toDoModel1);
     }
+    @PostMapping("/update")
+    public ResponseEntity<?> updateToDo(@RequestBody ToDoModel toDoModel){
+        ToDoModel toDoModel1 = toDoService.updateTodo(toDoModel);
+        return ResponseEntity.ok(toDoModel1);
+    }
+    @DeleteMapping("/deleted")
+    public ResponseEntity<?> deleteToDo(Long id){
+        toDoService.deleteToDo(id);
+        return ResponseEntity.ok().build();
+    }
 
 }
