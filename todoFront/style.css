@@ -20,9 +20,9 @@ table {
     width: 100%;
     border: 1px solid 
   }
-button, input{
+/* button, input{
   padding-right: 2%;
-}
+} */
 button{
   text-align: center;
 }
