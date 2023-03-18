@@ -36,8 +36,8 @@ public class TodoController {
         ToDoModel toDoModel1 = toDoService.updateTodo(toDoModel);
         return ResponseEntity.ok(toDoModel1);
     }
-    @DeleteMapping("/deleted")
-    public ResponseEntity<?> deleteToDo(Long id){
+    @DeleteMapping("/deleted/{id}")
+    public ResponseEntity<?> deleteToDo(@PathVariable(value = "id") Long id){
         toDoService.deleteToDo(id);
         return ResponseEntity.ok().build();
     }
