@@ -24,6 +24,10 @@ this is a ruff road map of expected steps, problem will likely occur along the w
 
 ## What Has Been Completed :
 
+#### Day 1 :
+* Create static table.
+* Add CSS to table
+
 ### Program ERD :
 
 ### Technologies Leveraged :
