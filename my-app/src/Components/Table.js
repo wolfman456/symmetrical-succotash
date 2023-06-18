@@ -6,6 +6,7 @@ const Table = () => {
     return(
   <div className="table">
       <table>
+          <tbody>
           <tr>
               <th>ID</th>
               <th>Name</th>
@@ -18,8 +19,19 @@ const Table = () => {
               <td>Make Table</td>
               <td>Make react table</td>
               <td>False</td>
-              <td><Update/> <Delete/></td>
+              <td>
+                  <Update/>
+                  <Delete/>
+              </td>
           </tr>
+          <tr>
+              <td><input/></td>
+              <td><input/></td>
+              <td><input/></td>
+              <td><input/></td>
+              <td><Save/></td>
+          </tr>
+          </tbody>
       </table>
   </div>
     )

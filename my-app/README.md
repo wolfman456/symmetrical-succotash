@@ -28,6 +28,10 @@ this is a ruff road map of expected steps, problem will likely occur along the w
 * Create static table.
 * Add CSS to table
 
+### Day 2 :
+* Added input portion of table
+* updated CSS
+
 ### Program ERD :
 
 ### Technologies Leveraged :
