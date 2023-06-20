@@ -16,19 +16,19 @@ const Table = () => {
           </tr>
           <tr>
               <td>1</td>
-              <td>Make Table</td>
-              <td>Make react table</td>
-              <td>False</td>
+              <td><input placeholder="name"/></td>
+              <td><input placeholder="Description"/></td>
+              <td><input placeholder="Complete"/></td>
               <td>
                   <Update/>
                   <Delete/>
               </td>
           </tr>
           <tr>
-              <td><input/></td>
-              <td><input/></td>
-              <td><input/></td>
-              <td><input/></td>
+              <td>id</td>
+              <td><input placeholder="name"/></td>
+              <td><input placeholder="Description"/></td>
+              <td><input placeholder="Complete"/></td>
               <td><Save/></td>
           </tr>
           </tbody>
